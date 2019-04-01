@@ -1,3 +1,12 @@
+## 0.2.12
+The primary change in this release is to add I2C LCD support (implemented solution detailed in [Daniel Frost's SoftwareI2C](https://github.com/herrfrost/firmware/tree/feature/SoftwareI2C)).
+
+### Features
+ - Add TWI/I2C, retain default Rev C pinout.  Pins 10 and 11 are SDA and SCL (i.e. I2C/TWI) respectively.  External pullups must be used on both SDA and SCL - around 2 kΩ
+
+### Bugfixes
+ - 
+
 ## 0.2.11
 The primary change in this release is to move the workspace to PlatformIO from Atmel Studio.
 

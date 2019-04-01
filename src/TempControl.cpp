@@ -108,7 +108,7 @@ void TempControl::init(void)
 
 	// Do not allow heating/cooling directly after reset.
 	// A failing script + CRON + Arduino uno (which resets on serial connect) could damage the compressor
-	// For test purposes, set these to -3600 to eliminate waiting after reset
+	// For test purposes, set these to -600 to eliminate waiting after reset
 	lastHeatTime = 0;
 	lastCoolTime = 0;
 }

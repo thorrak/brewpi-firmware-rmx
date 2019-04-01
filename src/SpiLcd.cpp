@@ -39,7 +39,7 @@ license and credits. */
 #include <util/delay.h>
 #include <util/atomic.h>
 
-#if BREWPI_SHIFT_LCD
+#if BREWPI_LCD_TYPE == BREWPI_DISPLAY_SHIFT_LCD
 
 // MDM - removed the latchPin parameter since it's never changed, and having a compile time constant makes the
 // compiled code smaller and more efficient. If a more convenient way to specifying the constant latch pin number is needed,

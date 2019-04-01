@@ -61,7 +61,7 @@ license and credits. */
  * This flag virtualizes as much of the hardware as possible, so the code can be run in the AvrStudio simulator, which
  * only emulates the microcontroller, not any attached peripherals.
  */
-#ifndef BREWPI_EMUFLATE
+#ifndef BREWPI_EMULATE
 #define BREWPI_EMULATE 0
 #endif
 

@@ -27,6 +27,39 @@ those were the names listed as contributors on the Legacy branch.
 See: 'original-license.md' for notes about the original project's
 license and credits. */
 
+// Most pins can be changed in code and in the web UI, however, and apart
+// from occupying the hardware I2C_SDA pin, the onewire pin is hard-coded
+// in multiple places. The only way to reasonably change it is to add
+// another shield type. That adds needless complexity without addressing the
+// underlying problem; hence a software I2C implementation.
+
+// Pin | Uno           | BrewPi RevC | BrewPi RevC I2C
+// --- | -----         | --------    | -----
+// 0   |Serial RX      | Serial      | Serial
+// 1   |Serial TX      | Serial      | Serial
+// 2   |INT0           | Actuator 3  | Actuator 3
+// 3   |INT1, PWM      | Beep        | Beep
+// 4   |               | Door sensor | Door sensor
+// 5   |PWM            | Actuator 2  | Actuator 2
+// 6   |PWM            | Actuator 1  | Actuator 1
+// 7   |               | Rotary      | Rotary
+// 8   |               | Rotary      | Rotary
+// 9   | PWM           | Rotary      | Rotary
+// 10  | SPI SS, PWM   |SPI (LCD)    | ASM_SDA (LCD)	
+// 11  | SPI MOSI, PWM |SPI (LCD)    | ASM_SCL (LCD)	
+// 12  | SPI MISO      | SPI (LCD)   |
+// 13  | SPI SCK, LED  | SPI (LCD)   |
+// A0  |               |             |			
+// A1  |               |             |			
+// A2  |               |             | 
+// A3  |               |             | 
+// A4  | TWI SDA       | OneWire     | OneWire
+// A5  | TWI SCL       | Actuator 4  | Actuator 4
+
+// 		Notes	
+// 		Buzzer requires PWM.	
+// 		TWI is Atmel's name for I2C.
+
 #pragma once
 
 #include "Brewpi.h"

@@ -41,11 +41,13 @@ license and credits. */
  * LCD Display using a shift register.
  * For diy-shields prior to the revA shield, this should be set to 0.
  */
-#ifndef BREWPI_SHIFT_LCD
-#if BREWPI_STATIC_CONFIG != BREWPI_SHIELD_DIY
-#define BREWPI_SHIFT_LCD 1
-#else
-#define BREWPI_SHIFT_LCD 0
+#ifndef BREWPI_LCD_TYPE
+#if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_DIY
+#define BREWPI_LCD_TYPE BREWPI_DISPLAY_NONE
+#elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_A
+#define BREWPI_LCD_TYPE BREWPI_DISPLAY_CLASSIC
+#elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_C
+#define BREWPI_LCD_TYPE BREWPI_DISPLAY_SHIFT_LCD
 #endif
 #endif
 
@@ -59,13 +61,6 @@ license and credits. */
 //#ifndef BREWPI_DS2413
 //#define BREWPI_DS2413 0
 //#endif
-
-/**
- * Enable the LCD display. Without this, a NullDisplay is used
- */
-#ifndef BREWPI_LCD
-#define BREWPI_LCD 1
-#endif
 
 #ifndef BREWPI_BUZZER
 #if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_DIY

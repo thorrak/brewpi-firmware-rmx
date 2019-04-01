@@ -37,9 +37,9 @@ license and credits. */
 ///
 /// Instead, copy the file from
 ///
-///             brewpi_avr/fallback/Config.h
+///             include/fallback/Config.h
 /// to
-///             brewpi_avr/Config.h
+///             include/Config.h
 ///
 /// (i.e. up one directory.)
 ///
@@ -75,13 +75,40 @@ license and credits. */
 //
 // Define which brewpi shield is used.
 // BREWPI_SHIELD_REV_A The RevA shield (ca. Feb 2013), two OneWire buses, door, heat, cool.
-// BREWPI_SHIELD_REV_C The RevC shield (ca. May 2013). One common ONeWire bus, 4 actuators. Dynaconfig.
+// BREWPI_SHIELD_REV_C The RevC shield (ca. May 2013). One common OneWire bus, 4 actuators. Dynaconfig.
+// BREWPI_SHIELD_DIY "Classic" DIY Shield with neither LCD, buzzer, nor rotary encoder.
 //
 // #ifndef BREWPI_STATIC_CONFIG
 // #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_A
 // #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_C
 // #endif
 //
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Set the display type
+//
+// #define BREWPI_LCD_TYPE BREWPI_DISPLAY_NONE
+// #define BREWPI_LCD_TYPE BREWPI_DISPLAY_CLASSIC
+// #define BREWPI_LCD_TYPE BREWPI_DISPLAY_SHIFT_LCD
+// #define BREWPI_LCD_TYPE BREWPI_DISPLAY_OLED
+// #define BREWPI_LCD_TYPE BREWPI_DISPLAY_TWI_LCD
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Set TWI/I2C LCD parameters
+//
+// #define TWI_ADDRESS		0x27
+// #define SDA_PIN			2
+// #define SDA_PORT		    PORTB
+// #define SCL_PIN			3
+// #define SCL_PORT		    PORTB
+// #define I2C_FASTMODE	    1
+// #define I2C_NOINTERRUPT	1
+// #define I2C_TIMEOUT		500
 //////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////
@@ -153,16 +180,6 @@ license and credits. */
 //
 // #ifndef BREWPI_MENU
 // #define BREWPI_MENU 1
-// #endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
-// Enable the LCD display. Without this, a NullDisplay is used
-//
-// #ifndef BREWPI_LCD
-// #define BREWPI_LCD 1
 // #endif
 //
 //////////////////////////////////////////////////////////////////////////
