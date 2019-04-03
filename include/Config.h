@@ -65,13 +65,17 @@ license and credits. */
 //////////////////////////////////////////////////////////////////////////
 //
 // Define which brewpi shield is used.
-// BREWPI_SHIELD_REV_A The RevA shield (ca. Feb 2013), two OneWire buses, door, heat, cool.
-// BREWPI_SHIELD_REV_C The RevC shield (ca. May 2013). One common OneWire bus, 4 actuators. Dynaconfig.
-// BREWPI_SHIELD_DIY "Classic" DIY Shield with neither LCD, buzzer, nor rotary encoder.
+// BREWPI_SHIELD_REV_A The RevA shield (ca. Feb 2013), two OneWire buses,
+//                     door, heat, cool.
+// BREWPI_SHIELD_REV_C The RevC shield (ca. May 2013). One common OneWire bus,
+//                     4 actuators. Dynaconfig.
+// BREWPI_SHIELD_DIY "Classic" DIY Shield with neither LCD, buzzer, nor rotary
+//                     encoder.
 //
 #ifndef BREWPI_STATIC_CONFIG
 // #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_A
 #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_C
+// #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_DIY
 #endif
 //
 //////////////////////////////////////////////////////////////////////////
@@ -82,30 +86,32 @@ license and credits. */
 //
 // #define BREWPI_LCD_TYPE BREWPI_DISPLAY_NONE
 // #define BREWPI_LCD_TYPE BREWPI_DISPLAY_CLASSIC
-#define BREWPI_LCD_TYPE BREWPI_DISPLAY_SHIFT_LCD
+// #define BREWPI_LCD_TYPE BREWPI_DISPLAY_SHIFT_LCD
 // #define BREWPI_LCD_TYPE BREWPI_DISPLAY_OLED
-// #define BREWPI_LCD_TYPE BREWPI_DISPLAY_TWI_LCD
+#define BREWPI_LCD_TYPE BREWPI_DISPLAY_TWI_LCD
 //
 //////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////
 //
 // Set TWI/I2C LCD parameters
+// See: https://www.arduino.cc/en/Reference/PortManipulation
 //
-// #define TWI_ADDRESS		0x27
-// #define SDA_PIN			2
-// #define SDA_PORT		    PORTB
-// #define SCL_PIN			3
-// #define SCL_PORT		    PORTB
-// #define I2C_FASTMODE	    1
-// #define I2C_NOINTERRUPT	1
-// #define I2C_TIMEOUT		500
+#define TWI_ADDRESS		0x3F
+#define SDA_PIN			2
+#define SDA_PORT		PORTB
+#define SCL_PIN			3
+#define SCL_PORT		PORTB
+#define I2C_FASTMODE	1
+#define I2C_NOINTERRUPT	1
+#define I2C_TIMEOUT		500
 //////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////
 //
-// Enable the simulator. Real sensors/actuators are replaced with simulated versions. In particular, the values reported by
-// temp sensors are based on a model of the fridge/beer.
+// Enable the simulator. Real sensors/actuators are replaced with simulated
+// versions. In particular, the values reported by temp sensors are based on
+// a model of the fridge/beer.
 //
 // #ifndef BREWPI_SIMULATE
 // #define BREWPI_SIMULATE 0
@@ -125,8 +131,9 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// This flag virtualizes as much of the hardware as possible, so the code can be run in the AvrStudio simulator, which
-// only emulates the microcontroller, not any attached peripherals.
+// This flag virtualizes as much of the hardware as possible, so the code can
+// be run in the AvrStudio simulator, which only emulates the microcontroller,
+// not any attached peripherals.
 //
 // #ifndef BREWPI_EMULATE
 // #define BREWPI_EMULATE 0
@@ -147,7 +154,8 @@ license and credits. */
 //////////////////////////////////////////////////////////////////////////
 //
 // Flag to control implementation of TempControl as a static class.
-// Should normally be left alone unless you are experimenting with multi-instancing.
+// Should normally be left alone unless you are experimenting with multi-
+// instancing.
 //
 // #ifndef TEMP_CONTROL_STATIC
 // #define TEMP_CONTROL_STATIC 1

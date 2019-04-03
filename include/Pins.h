@@ -35,18 +35,18 @@ license and credits. */
 
 // Pin | Uno           | BrewPi RevC | BrewPi RevC I2C
 // --- | -----         | --------    | -----
-// 0   |Serial RX      | Serial      | Serial
-// 1   |Serial TX      | Serial      | Serial
-// 2   |INT0           | Actuator 3  | Actuator 3
-// 3   |INT1, PWM      | Beep        | Beep
+// 0   | Serial RX     | Serial      | Serial
+// 1   | Serial TX     | Serial      | Serial
+// 2   | INT0          | Actuator 3  | Actuator 3
+// 3   | INT1, PWM     | Beep        | Beep
 // 4   |               | Door sensor | Door sensor
-// 5   |PWM            | Actuator 2  | Actuator 2
-// 6   |PWM            | Actuator 1  | Actuator 1
+// 5   | PWM           | Actuator 2  | Actuator 2
+// 6   | PWM           | Actuator 1  | Actuator 1
 // 7   |               | Rotary      | Rotary
 // 8   |               | Rotary      | Rotary
 // 9   | PWM           | Rotary      | Rotary
-// 10  | SPI SS, PWM   |SPI (LCD)    | ASM_SDA (LCD)	
-// 11  | SPI MOSI, PWM |SPI (LCD)    | ASM_SCL (LCD)	
+// 10  | SPI SS, PWM   | SPI (LCD)   | ASM_SDA (LCD)	
+// 11  | SPI MOSI, PWM | SPI (LCD)   | ASM_SCL (LCD)	
 // 12  | SPI MISO      | SPI (LCD)   |
 // 13  | SPI SCK, LED  | SPI (LCD)   |
 // A0  |               |             |			
